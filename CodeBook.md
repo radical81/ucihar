@@ -1,47 +1,265 @@
 #Codebook
 
-For each of these data sets, we have raw data:
+subject 	2
+   Numeric value for a person, an identifier for the subject who carried out the experiment.
+   
+activity	18
+	Descriptive phrase for the activity performed.
+	
+tBodyAcc-mean()-X  18
+    Measurement obtained.
 
-* activity_labels.txt correspond to descriptive names  for activities. This will reflect as rows in one variable in the data set that we are building (not the raw data).
+tBodyAcc-mean()-Y  18 
+    Measurement obtained.
 
-* y_test.txt /y_train.txt is the numeric representation of the activities. Each will correspond to one row in the data set.
+tBodyAcc-mean()-Z  18 
+    Measurement obtained.
 
-* subject_test.txt /subject_train.txt is representative of the people who have produced the human activity. This also represents one row each in the data set.
+tBodyAcc-std()-X  18 
+    Measurement obtained.
 
-* features.txt will be the variables or columns representing the descriptive names of our data set's human activity readings.
+tBodyAcc-std()-Y  18 
+    Measurement obtained.
 
-* X_test.txt /X_train.txt represents the human activity readings for the different variables. This will be the main data set for the raw data.
+tBodyAcc-std()-Z  18 
+    Measurement obtained.
 
+tGravityAcc-mean()-X  18 
+    Measurement obtained.
 
-First, we need to load the dplyr library:
+tGravityAcc-mean()-Y  18 
+    Measurement obtained.
 
-library(dplyr)
+tGravityAcc-mean()-Z  18 
+    Measurement obtained.
 
-To create the table with descriptive variable names corresponding to the human activity readings, we use a function called
+tGravityAcc-std()-X  18 
+    Measurement obtained.
 
-readSubjectActivityData <- function(mode="test") 
+tGravityAcc-std()-Y  18 
+    Measurement obtained.
 
-Which can be used in either test (default) or train data.
+tGravityAcc-std()-Z  18 
+    Measurement obtained.
 
-So the function works as follows:
- 
-* We will read the X and Y data, and add the features as the column headings like  tBodyAcc-mean()-X, tBodyAcc-mean()-Y, etc.
+tBodyAccJerk-mean()-X  18 
+    Measurement obtained.
 
-* After that we will use the activities as an additional variable /column, but instead of the numeric value, we'll use the descriptive values like "WALKING".
+tBodyAccJerk-mean()-Y  18 
+    Measurement obtained.
 
-* We will then add the subjects as another variable /column. These are numbers so we keep them as is.
- 
-We use this function to read the data sets for test and train and store them to variables, like this:
+tBodyAccJerk-mean()-Z  18 
+    Measurement obtained.
 
-testSubject <- readSubjectActivityData()
-trainSubject <- readSubjectActivityData("train")
+tBodyAccJerk-std()-X  18 
+    Measurement obtained.
 
-After that we merge them using rbind. We don't need all the variables so we filter only those related to mean and standard deviation. We now have a combined and filtered data set.
+tBodyAccJerk-std()-Y  18 
+    Measurement obtained.
 
-From this data set, we generate a new table that only has the mean or average of each human activity reading, per subject per activity. We will use the function
+tBodyAccJerk-std()-Z  18 
+    Measurement obtained.
 
-generateAverageData <- function(dataSet) 
+tBodyGyro-mean()-X  18 
+    Measurement obtained.
 
-In this function, the final data set can be achieved using group_by and summarise_each.
+tBodyGyro-mean()-Y  18 
+    Measurement obtained.
 
-We then save it to a file called "run_analysis_tidy_data.txt" using write.table.
+tBodyGyro-mean()-Z  18 
+    Measurement obtained.
+
+tBodyGyro-std()-X  18 
+    Measurement obtained.
+
+tBodyGyro-std()-Y  18 
+    Measurement obtained.
+
+tBodyGyro-std()-Z  18 
+    Measurement obtained.
+
+tBodyGyroJerk-mean()-X  18 
+    Measurement obtained.
+
+tBodyGyroJerk-mean()-Y  18 
+    Measurement obtained.
+
+tBodyGyroJerk-mean()-Z  18 
+    Measurement obtained.
+
+tBodyGyroJerk-std()-X  18 
+    Measurement obtained.
+
+tBodyGyroJerk-std()-Y  18 
+    Measurement obtained.
+
+tBodyGyroJerk-std()-Z  18 
+    Measurement obtained.
+
+tBodyAccMag-mean()  18
+    Measurement obtained.
+
+tBodyAccMag-std()  18
+    Measurement obtained.
+
+tGravityAccMag-mean()  18
+    Measurement obtained.
+
+tGravityAccMag-std()  18
+    Measurement obtained.
+
+tBodyAccJerkMag-mean()  18
+    Measurement obtained.
+
+tBodyAccJerkMag-std()  18
+    Measurement obtained.
+
+tBodyGyroMag-mean()  18
+    Measurement obtained.
+
+tBodyGyroMag-std()  18
+    Measurement obtained.
+
+tBodyGyroJerkMag-mean()  18
+    Measurement obtained.
+
+tBodyGyroJerkMag-std()  18
+    Measurement obtained.
+
+fBodyAcc-mean()-X  18 
+    Measurement obtained.
+
+fBodyAcc-mean()-Y  18 
+    Measurement obtained.
+
+fBodyAcc-mean()-Z  18 
+    Measurement obtained.
+
+fBodyAcc-std()-X  18 
+    Measurement obtained.
+
+fBodyAcc-std()-Y  18 
+    Measurement obtained.
+
+fBodyAcc-std()-Z  18 
+    Measurement obtained.
+
+fBodyAcc-meanFreq()-X  18 
+    Measurement obtained.
+
+fBodyAcc-meanFreq()-Y  18 
+    Measurement obtained.
+
+fBodyAcc-meanFreq()-Z  18 
+    Measurement obtained.
+
+fBodyAccJerk-mean()-X  18 
+    Measurement obtained.
+
+fBodyAccJerk-mean()-Y  18 
+    Measurement obtained.
+
+fBodyAccJerk-mean()-Z  18 
+    Measurement obtained.
+
+fBodyAccJerk-std()-X  18 
+    Measurement obtained.
+
+fBodyAccJerk-std()-Y  18 
+    Measurement obtained.
+
+fBodyAccJerk-std()-Z  18 
+    Measurement obtained.
+
+fBodyAccJerk-meanFreq()-X  18 
+    Measurement obtained.
+
+fBodyAccJerk-meanFreq()-Y  18 
+    Measurement obtained.
+
+fBodyAccJerk-meanFreq()-Z  18 
+    Measurement obtained.
+
+fBodyGyro-mean()-X  18 
+    Measurement obtained.
+
+fBodyGyro-mean()-Y  18 
+    Measurement obtained.
+
+fBodyGyro-mean()-Z  18 
+    Measurement obtained.
+
+fBodyGyro-std()-X  18 
+    Measurement obtained.
+
+fBodyGyro-std()-Y  18 
+    Measurement obtained.
+
+fBodyGyro-std()-Z  18 
+    Measurement obtained.
+
+fBodyGyro-meanFreq()-X  18 
+    Measurement obtained.
+
+fBodyGyro-meanFreq()-Y  18 
+    Measurement obtained.
+
+fBodyGyro-meanFreq()-Z  18 
+    Measurement obtained.
+
+fBodyAccMag-mean()  18
+    Measurement obtained.
+
+fBodyAccMag-std()  18
+    Measurement obtained.
+
+fBodyAccMag-meanFreq()  18
+    Measurement obtained.
+
+fBodyBodyAccJerkMag-mean()  18
+    Measurement obtained.
+
+fBodyBodyAccJerkMag-std()  18
+    Measurement obtained.
+
+fBodyBodyAccJerkMag-meanFreq()  18
+    Measurement obtained.
+
+fBodyBodyGyroMag-mean()  18
+    Measurement obtained.
+
+fBodyBodyGyroMag-std()  18
+    Measurement obtained.
+
+fBodyBodyGyroMag-meanFreq()  18
+    Measurement obtained.
+
+fBodyBodyGyroJerkMag-mean()  18
+    Measurement obtained.
+
+fBodyBodyGyroJerkMag-std()  18
+    Measurement obtained.
+
+fBodyBodyGyroJerkMag-meanFreq()  18
+    Measurement obtained.
+
+angle(tBodyAccMean,gravity)  18
+    Measurement obtained.
+
+angle(tBodyAccJerkMean),gravityMean)  18
+    Measurement obtained.
+
+angle(tBodyGyroMean,gravityMean)  18
+    Measurement obtained.
+
+angle(tBodyGyroJerkMean,gravityMean)  18
+    Measurement obtained.
+
+angle(X,gravityMean)  18 
+    Measurement obtained.
+
+angle(Y,gravityMean)  18
+    Measurement obtained.
+
+angle(Z,gravityMean)  18
+    Measurement obtained.
