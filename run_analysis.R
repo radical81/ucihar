@@ -43,4 +43,4 @@ meanStdOnly <- mergeData[, grep("activity|subject|mean|Mean|std", colnames(merge
 
 #From the data set, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 newData <- generateAverageData(meanStdOnly)
-write.table(newData, file="run_analysis_tidy_data.txt")
+write.table(newData, file="run_analysis_tidy_data.txt", row.names = FALSE)
